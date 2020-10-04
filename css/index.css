@@ -8,6 +8,7 @@ html {
     bottom:0;
     left:0;
     right:0;
+    height: 100%;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
     bottom:0;
     left:0;
     right:0;
+    height: 100%;
 }
 
 /*nav section*/
@@ -76,6 +78,11 @@ h1 {
     margin: 24px;
 }
 
+#searchBarDiv {
+    margin: auto;
+    width: 95%;
+}
+
 /* Change the link color to #111 (black) on hover */
 
 li:hover {
@@ -90,7 +97,15 @@ li.active {
 /* TABLE SECTION */
 
 .deleteImage {
-    height: 35px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.deleteImageSmall {
+    height: 40px;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -104,8 +119,26 @@ li.active {
 }
 
 .tableWrapper {
-    height: 720px;
+    height: 700px;
     overflow-y: auto;
+    margin-top: 20px;
+}
+
+dl {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    border-style: solid;
+    border-width: thin;
+    border-collapse: collapse;
+    border-radius: 30px;
+    border-color: #254E58;
+}
+
+dd {
+    font-size: 1.2em;
 }
 
 .tableWrapper thead th {
@@ -113,14 +146,28 @@ li.active {
     top: 0;
 }
 
-table {
-    border-collapse: collapse;
-    
-    margin: 0 auto;
+dl:hover {
+    /*background-color: rgba(0,0,0,.075);*/
+    background: #254E58;
+    color: white;
 }
 
+
 #employeesTable, #departmentsTable, #locationsTable {
-    width: 98%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#employeesTable {
+    width: 90%;
+}
+
+#departmentsTable {
+    width: 70%;
+}
+
+#locationsTable {
+    width: 60%;
 }
 
 th, td {

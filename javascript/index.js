@@ -101,34 +101,59 @@ function getFilteredLocations() {
 }
 
 function populateDepartmentsTable() {
-  $("#departmentsTable tbody").empty();
+  $("#departmentsTable").empty();
   if (allDepartments != null) {
     for (index = 0; index < allDepartments.length; index++) {
       let departmentId = allDepartments[index].id;
       let name = allDepartments[index].name;
       let location = allDepartments[index].location;
-      $('#departmentsTable tbody').append(`
-      <tr  data-toggle="modal" data-id=` + departmentId + ` onclick='openDepartmentModal();'">
-        <td>` + name + `</td>
-        <td>` + location + `</td>
-        <td><img src="images/delete.png" onclick='deleteDepartment();' alt='delete icon' data-id=` + departmentId + ` class='deleteImage' /></td>
-      </tr>`);
+
+      $('#departmentsTable').append(`
+        <dl class="row" data-id=` + departmentId + ` onclick='openDepartmentModal();'>
+          <div class='col-sm-10'>
+              <div class='row'>
+                <dt class='col-sm-2'>Name</dt>
+                <dd class="col-sm-4">` + name + `</dd>
+                <dt class='col-sm-2'>Location</dt>
+                <dd class="col-sm-4">` + location + `</dd>
+              </div>
+           </div>
+          <div class='col-sm-2'>
+            <div class='row'>
+              <br />
+              <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteDepartment();' alt='delete icon' data-id=` + departmentId + ` class='deleteImageSmall' /></dd>
+              <br />
+            </div>
+          </div>
+      `);
 
     }
   }
 }
 
 function populateLocationsTable() {
-  $("#locationsTable tbody").empty();
+  $("#locationsTable").empty();
   if (allLocations != null) {
     for (index = 0; index < allLocations.length; index++) {
       let locationId = allLocations[index].id;
       let name = allLocations[index].name;
-      $('#locationsTable tbody').append(`
-      <tr  data-toggle="modal" data-id=` + locationId + ` onclick='openLocationModal();'">
-        <td>` + name + `</td>
-        <td><img src="images/delete.png" onclick='deleteLocation();' alt='delete icon' data-id=` + locationId + ` class='deleteImage' /></td>
-      </tr>`);
+
+      $('#locationsTable').append(`
+        <dl class="row" data-id=` + locationId + ` onclick='openLocationModal();'>
+          <div class='col-sm-10'>
+              <div class='row'>
+                <dt class='col-sm-4'>Name</dt>
+                <dd class="col-sm-8">` + name + `</dd>
+              </div>
+           </div>
+          <div class='col-sm-2'>
+            <div class='row'>
+              <br />
+              <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteLocation();' alt='delete icon' data-id=` + locationId + ` class='deleteImageSmall' /></dd>
+              <br />
+            </div>
+          </div>
+      `);
 
     }
   }
@@ -151,6 +176,8 @@ function showDepartmentsTable() {
   $('#addLocationButton').hide();
 
   $('h1').text('Departments');
+
+  $('#searchBarDiv').css('width', '76%');
 }
 
 function showLocationTable() {
@@ -170,6 +197,8 @@ function showLocationTable() {
   $('#addEmployeeButton').hide();
 
   $('h1').text('Locations');
+
+  $('#searchBarDiv').css('width', '66%');
 }
 
 function populateDepartments() {
@@ -236,10 +265,12 @@ function showPersonnelTable() {
   $('#addLocationButton').hide();
 
   $('h1').text('Personnel');
+
+  $('#searchBarDiv').css('width', '95%');
 }
 
 function populateEmployeesTable() {
-  $("#employeesTable tbody").empty();
+  $("#employeesTable").empty();
 
   if (employeesData != null) {
     for (index = 0; index < employeesData.length; index++) {
@@ -251,17 +282,35 @@ function populateEmployeesTable() {
       let phoneNumber = employeesData[index].phoneNumber != null ? employeesData[index].phoneNumber : "";
       let department = employeesData[index].department;
 
-      $('#employeesTable tbody').append(`
-				<tr data-toggle="modal" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
-					<td>` + lastName + `</td>
-					<td>` + firstName + `</td>
-					<td>` + jobTitle + `</td>
-          <td>` + email + `</td>
-          <td>` + phoneNumber + `</td>
-          <td>` + department + `</td>
-          <td><img src="images/delete.png" onclick='deleteEmployee();' alt='delete icon' data-id=` + employeeId + ` class='deleteImage' /></td>
-        </tr>
-			`);
+      
+      
+      $('#employeesTable').append(`
+        <dl class="row" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
+          <div class='col-sm-10'>
+              <div class='row'>
+                <dt class='col-sm-2'>Name</dt>
+                <dd class="col-sm-4">` + firstName + ` ` + lastName + `</dd>
+                <dt class='col-sm-2'>Phone Number</dt>
+                <dd class="col-sm-4">` + phoneNumber + `</dd>
+
+                <dt class='col-sm-2'>Job Title</dt>
+                <dd class="col-sm-4">` + jobTitle + `</dd>
+                <dt class='col-sm-2'>Email</dt>
+                <dd class="col-sm-4">` + email + `</dd>
+          
+
+                <dt class='col-sm-2'>Department</dt>
+                <dd class="col-sm-4">` + department + `</dd>
+              </div>
+           </div>
+          <div class='col-sm-2'>
+            <div class='row'>
+              <br />
+              <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteEmployee();' alt='delete icon' data-id=` + employeeId + ` class='deleteImage' /></dd>
+              <br />
+            </div>
+          </div>
+      `);
     }
   }
 
@@ -280,12 +329,18 @@ function validateNewEmployee() {
     //display errors on modal
     if (lastName == null) {
       $('#newEmployeeLastName').addClass('is-invalid');
+    } else {
+      $('#newEmployeeLastName').removeClass('is-invalid');
     }
     if (firstName == null) {
       $('#newEmployeeFirstName').addClass('is-invalid');
+    } else {
+      $('#newEmployeeFirstName').removeClass('is-invalid');
     }
     if (department == null) {
       $('#newEmployeeDepartment').addClass('is-invalid');
+    } else {
+      $('#newEmployeeDepartment').removeClass('is-invalid');
     }
   }
 }
@@ -306,10 +361,30 @@ function insertNewEmployee() {
         console.log('Employee inserted correctly')
       } else {
         console.error(data.status.description);
+        getAllEmployees();
       }
     });
-  getAllEmployees();
   $('#insertEmployeeModal').modal('hide');
+}
+
+function validateNewDepartment() {
+  let name = $('#newDepartmentName').val();
+  let locationID = $('#newDepartmentLocation').val();
+
+  if(name != "" && locationID != null) {
+    insertNewDepartment();
+  } else {
+    if(name == "") {
+      $('#newDepartmentName').addClass('is-invalid');
+    } else {
+      $('#newDepartmentName').removeClass('is-invalid');
+    }
+    if(locationID == null) {
+      $('#newDepartmentLocation').addClass('is-invalid');
+    } else {
+      $('#newDepartmentLocation').removeClass('is-invalid');
+    }
+  }
 }
 
 function insertNewDepartment() {
@@ -320,13 +395,23 @@ function insertNewDepartment() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Department inserted correctly')
+        console.log('Department inserted correctly');
+        getAllDepartments();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllDepartments();
   $('#insertDepartmentModal').modal('hide');
+}
+
+function validateNewLocation() {
+  let name = $('#newLocationName').val();
+
+  if(name != '') {
+    insertNewLocation();
+  } else {
+    $('#newLocationName').addClass('is-invalid');
+  }
 }
 
 function insertNewLocation() {
@@ -336,18 +421,19 @@ function insertNewLocation() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Location inserted correctly')
+        console.log('Location inserted correctly');
+        getAllLocations();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllLocations();
+  
   $('#insertLocationModal').modal('hide');
 }
 
 
 function populateEditEmployeeModal(e) {
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let employee;
   for (let i = 0; i < employeesData.length; i++) {
     if (employeesData[i].id == idFromRow) {
@@ -372,6 +458,32 @@ function populateEditEmployeeModal(e) {
   }
 }
 
+function clearEditEmployeeModal() {
+  $('#editEmployeeLastName').removeClass('is-invalid');
+  $('#editEmployeeFirstName').removeClass('is-invalid');
+  $('#editEmployeeDepartment').removeClass('is-invalid');
+}
+
+function validateEditEmployee() {
+  let lastName = $('#editEmployeeLastName').val();
+  let firstName = $('#editEmployeeFirstName').val();
+
+  if(lastName != "" && firstName != "" ) {
+    editEmployee();
+  } else {
+    if(lastName == "") {
+      $('#editEmployeeLastName').addClass('is-invalid');
+    } else {
+      $('#editEmployeeLastName').removeClass('is-invalid');
+    }
+    if(firstName == "") {
+      $('#editEmployeeFirstName').addClass('is-invalid');
+    } else {
+      $('#editEmployeeFirstName').removeClass('is-invalid');
+    }
+  }
+}
+
 function editEmployee() {
   let lastName = $('#editEmployeeLastName').val();
   let firstName = $('#editEmployeeFirstName').val();
@@ -385,14 +497,29 @@ function editEmployee() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Employee updated correctly')
+        console.log('Employee updated correctly');
+        getAllEmployees();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllEmployees();
   $('#editEmployeeModal').modal('hide');
 
+}
+
+function validateEditDepartment() {
+  let name = $('#editDepartmentName').val();
+  let id = currentEditDepartment.id;
+
+  if(name != "") {
+    editDepartment();
+  } else {
+    if(name == "") {
+      $('#editDepartmentName').addClass('is-invalid');
+    } else {
+      $('#editDepartmentName').removeClass('is-invalid');
+    }
+  }
 }
 
 function editDepartment() {
@@ -404,13 +531,23 @@ function editDepartment() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Department updated correctly')
+        console.log('Department updated correctly');
+        getAllDepartments();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllDepartments();
+  
   $('#editDepartmentModal').modal('hide');
+}
+
+function validateEditLocation() {
+  let name = $('#editLocationName').val();
+  if(name != "") {
+    editLocation()
+  } else {
+    $('#editLocationName').addClass('is-invalid');
+  }
 }
 
 function editLocation() {
@@ -421,12 +558,13 @@ function editLocation() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Location updated correctly')
+        console.log('Location updated correctly');
+        getAllLocations();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllLocations();
+  
   $('#editLocationModal').modal('hide');
 }
 
@@ -437,12 +575,12 @@ function deleteEmployeeFromModal() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Employee deleted correctly')
+        console.log('Employee deleted correctly');
+        getAllEmployees();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllEmployees();
   $('#editEmployeeModal').modal('hide');
   $('#deleteEmployeeModal').modal('hide');
 
@@ -456,7 +594,7 @@ function openEmployeeModal() {
 function deleteEmployee(e) {
   del_clicked = 1;
 
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let employee;
   for (let i = 0; i < employeesData.length; i++) {
     if (employeesData[i].id == idFromRow) {
@@ -475,12 +613,13 @@ function deleteDepartmentFromModal() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Department deleted correctly')
+        console.log('Department deleted correctly');
+        getAllDepartments();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllDepartments();
+  
   $('#editDepartmentModal').modal('hide');
   $('#deleteDepartmentModal').modal('hide');
 }
@@ -492,12 +631,13 @@ function deleteLocationFromModal() {
     .done(function (data) {
       console.log(data);
       if (data.status.code == 200) {
-        console.log('Location deleted correctly')
+        console.log('Location deleted correctly');
+        getAllLocations();
       } else {
         console.error(data.status.description);
       }
     });
-  getAllLocations();
+  
   $('#editLocationModal').modal('hide');
   $('#deleteLocationModal').modal('hide');
 }
@@ -515,7 +655,7 @@ function openLocationModal() {
 function deleteDepartment(e) {
   del_department_clicked = 1;
 
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let department;
   for (let i = 0; i < allDepartments.length; i++) {
     if (allDepartments[i].id == idFromRow) {
@@ -530,7 +670,7 @@ function deleteDepartment(e) {
 function deleteLocation(e) {
   del_location_clicked = 1;
 
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let location;
   for (let i = 0; i < allLocations.length; i++) {
     if (allLocations[i].id == idFromRow) {
@@ -543,7 +683,7 @@ function deleteLocation(e) {
 }
 
 function populateEditDepartmentModal(e) {
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let department;
   for (let i = 0; i < allDepartments.length; i++) {
     if (allDepartments[i].id == idFromRow) {
@@ -564,8 +704,13 @@ function populateEditDepartmentModal(e) {
   }
 }
 
+function clearEditDepartmentModal() {
+  $('#editDepartmentName').removeClass('is-invalid');
+  $('#editDepartmentLocation').removeClass('is-invalid');
+}
+
 function populateEditLocationModal(e) {
-  let idFromRow = $(event.target).closest('tr').data('id');
+  let idFromRow = $(event.target).closest('dl').data('id');
   let location;
   for (let i = 0; i < allLocations.length; i++) {
     if (allLocations[i].id == idFromRow) {
@@ -575,6 +720,10 @@ function populateEditLocationModal(e) {
     }
   }
   $('#editLocationName').val(location.name);
+}
+
+function clearEditLocationModal() {
+  $('#editLocationName').removeClass('is-invalid');
 }
 
 function populateDeleteEmployeeModal() {
@@ -649,12 +798,13 @@ $(document).ready(function () {
 
   //PERSONNEL
   $('#editEmployeeModal').on('shown.bs.modal', populateEditEmployeeModal);
+  $('#editEmployeeModal').on('hidden.bs.modal', clearEditEmployeeModal);
   $('#deleteEmployeeModal').on('shown.bs.modal', populateDeleteEmployeeModal);
   $('#deleteEmployeeModal').on('hidden.bs.modal', function () {
     del_clicked = 0;
   });
   $('#insertEmployeeModal').on('hidden.bs.modal', clearAddNewEmployeeModal);
-  $('#editEmployeeSubmit').click(editEmployee);
+  $('#editEmployeeSubmit').click(validateEditEmployee);
   $('#addNewEmployeeSubmit').click(validateNewEmployee);
   $('#deleteEmployeeButton').click(deleteEmployeeFromModal);
 
@@ -665,21 +815,23 @@ $(document).ready(function () {
   });
   $('#insertDepartmentModal').on('hidden.bs.modal', clearAddNewDepartmentModal);
  
-  $('#addNewDepartmentSubmit').click(insertNewDepartment);
+  $('#addNewDepartmentSubmit').click(validateNewDepartment);
   $('#editDepartmentModal').on('shown.bs.modal', populateEditDepartmentModal);
-  $('#editDepartmentSubmit').click(editDepartment);
+  $('#editDepartmentModal').on('shown.bs.modal', clearEditDepartmentModal);
+  $('#editDepartmentSubmit').click(validateEditDepartment);
   $('#deleteDepartmentButton').click(deleteDepartmentFromModal);
 
 
   //LOCATION
   $('#deleteLocationModal').on('shown.bs.modal', populateDeleteLocationModal);
-  $('#deleteDepartmentModal').on('hidden.bs.modal', function () {
+  $('#deleteLocationModal').on('hidden.bs.modal', function () {
     del_location_clicked = 0;
   });
   $('#insertLocationModal').on('hidden.bs.modal', clearAddNewLocationModal);
-  $('#addNewLocationSubmit').click(insertNewLocation);
+  $('#addNewLocationSubmit').click(validateNewLocation);
   $('#editLocationModal').on('shown.bs.modal', populateEditLocationModal);
-  $('#editLocationSubmit').click(editLocation);
+  $('#editLocationModal').on('hidden.bs.modal', clearEditLocationModal);
+  $('#editLocationSubmit').click(validateEditLocation);
   $('#deleteLocationButton').click(deleteLocationFromModal);
   
 });

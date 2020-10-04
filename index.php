@@ -59,12 +59,10 @@
     </section>
 
     <h1>Personnel</h1>
-    <div class='row'>
-        <div class='col-2'>
+    <div class='row' id='searchBarDiv'>
+        <div class='col-12'>
             <img src='images/search-icon.png' alt='search icon' id='searchIcon' />
             <input type='text' id='nameFilter' placeholder="Name" class='form-control' />
-        </div>
-        <div class='col-2'>
             <button type="button" class="btn btn-secondary" id='resetFiltersButton'>
                 Reset Filters
             </button>
@@ -76,27 +74,10 @@
 
 
     <section id='employeeSection'>
-        <div id='employeesTableWrapper' class='tableWrapper'>
-            <table id='employeesTable' class='table table-borderless shadow table-hover'>
-                <thead>
-                    <tr>
-                        <th class="th-sm">Last Name
-                        </th>
-                        <th class="th-sm">First Name
-                        </th>
-                        <th class="th-sm">Job Title
-                        </th>
-                        <th class="th-sm">Email
-                        </th>
-                        <th class="th-sm">Phone Number
-                        </th>
-                        <th class="th-sm">Department
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <div id='employeesTableWrapper' class='tableWrapper shadow'>
+            <div id='employeesTable' >
+
+            </div>
         </div>
 
         <div class="modal" tabindex="-1" role="dialog" id='editEmployeeModal'>
@@ -111,8 +92,14 @@
                     <div class="modal-body">
                         <label>Last Name</label>
                         <input type='text' id='editEmployeeLastName' required class='form-control' />
+                        <div class="invalid-feedback">
+                            Please insert a last name.
+                        </div>
                         <label>First Name</label>
                         <input type='text' id='editEmployeeFirstName' required class='form-control' />
+                        <div class="invalid-feedback">
+                            Please insert a first name.
+                        </div>
                         <label>Job Title</label>
                         <input type='text' id='editEmployeeJobTitle' class='form-control' />
 
@@ -204,18 +191,9 @@
 
     <section id='departmentSection'>
         <div class='tableWrapper'>
-            <table id='departmentsTable' class='table table-borderless shadow table-hover'>
-                <thead>
-                    <tr>
-                        <th class="th-sm">Name
-                        </th>
-                        <th class="th-sm">Location
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <div id='departmentsTable'>
+                
+            </div>
         </div>
 
 
@@ -231,10 +209,14 @@
                     <div class="modal-body">
                         <label>Name</label>
                         <input type='text' id='editDepartmentName' class='form-control' required />
+                        <div class="invalid-feedback">
+                            Please insert a name.
+                        </div>
 
                         <label>Location</label>
                         <select id='editDepartmentLocation' class='form-control'>
                         </select>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary modalButton" data-dismiss="modal">Cancel</button>
@@ -279,10 +261,17 @@
                     <div class="modal-body">
                         <label>Name</label>
                         <input type='text' id='newDepartmentName' class='form-control' />
+                        <div class="invalid-feedback">
+                            Please insert a name.
+                        </div>
 
                         <label>Location</label>
                         <select id='newDepartmentLocation' class='form-control'>
                         </select>
+                        <div class="invalid-feedback">
+                            Please select a location.
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary modalButton" data-dismiss="modal">Cancel</button>
@@ -295,16 +284,9 @@
 
     <section id='locationSection'>
         <div class='tableWrapper'>
-            <table id='locationsTable' class='table table-borderless shadow table-hover'>
-                <thead>
-                    <tr>
-                        <th class="th-sm">Name
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <div id='locationsTable'>
+
+            </div>
         </div>
 
         <div class="modal" tabindex="-1" role="dialog" id='editLocationModal'>
@@ -319,6 +301,9 @@
                     <div class="modal-body">
                         <label>Name</label>
                         <input type='text' id='editLocationName' class='form-control' />
+                        <div class="invalid-feedback">
+                            Please insert a name.
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary modalButton" data-dismiss="modal">Cancel</button>
@@ -363,6 +348,9 @@
                     <div class="modal-body">
                         <label>Name</label>
                         <input type='text' id='newLocationName' class='form-control' />
+                        <div class="invalid-feedback">
+                            Please insert a name.
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary modalButton" data-dismiss="modal">Cancel</button>
