@@ -144,7 +144,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary modalButton float-right" data-toggle="modal" data-target="#insertEmployeeModal" id='addEmployeeButton'>+ Add Employee</button>
+        <button type="button" class="btn btn-primary modalButton float-left" data-toggle="modal" data-target="#insertEmployeeModal" id='addEmployeeButton'>+ Add Employee</button>
         <div class="modal" tabindex="-1" role="dialog" id='insertEmployeeModal'>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -248,7 +248,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary modalButton float-right" data-toggle="modal" data-target="#insertDepartmentModal" id='addDepartmentButton'>+ Add Department</button>
+        <button type="button" class="btn btn-primary modalButton float-left" data-toggle="modal" data-target="#insertDepartmentModal" id='addDepartmentButton'>+ Add Department</button>
         <div class="modal" tabindex="-1" role="dialog" id='insertDepartmentModal'>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -335,7 +335,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary modalButton float-right" data-toggle="modal" data-target="#insertLocationModal" id='addLocationButton'>+ Add Location</button>
+        <button type="button" class="btn btn-primary modalButton float-left" data-toggle="modal" data-target="#insertLocationModal" id='addLocationButton'>+ Add Location</button>
         <div class="modal" tabindex="-1" role="dialog" id='insertLocationModal'>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

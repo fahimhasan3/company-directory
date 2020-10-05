@@ -289,7 +289,7 @@ function populateEmployeesTable() {
           <div class='col-sm-10'>
               <div class='row'>
                 <dt class='col-sm-2'>Name</dt>
-                <dd class="col-sm-4">` + firstName + ` ` + lastName + `</dd>
+                <dd class="col-sm-4">` + lastName + ` ` + firstName + `</dd>
                 <dt class='col-sm-2'>Phone Number</dt>
                 <dd class="col-sm-4">` + phoneNumber + `</dd>
 

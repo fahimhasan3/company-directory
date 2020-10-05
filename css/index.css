@@ -1,6 +1,5 @@
 html {
     font-family: sans-serif;
-    margin-bottom: 5%;
     font-size: 0.9em;
     background-color: #F7F7F7;
     position:fixed;
@@ -8,7 +7,6 @@ html {
     bottom:0;
     left:0;
     right:0;
-    height: 100%;
 }
 
 body {
@@ -18,7 +16,6 @@ body {
     bottom:0;
     left:0;
     right:0;
-    height: 100%;
 }
 
 /*nav section*/
@@ -56,12 +53,15 @@ li {
 }
 
 #resetFiltersButton, #advancedSearchButton, #nameFilter {
-    margin-top: 10px;
-    margin-bottom: 15px;
     margin-left: 5px;
     font-weight: bold;
     line-height: 1.5em;
     font-size: 1.1em;
+    margin-top: 5px;
+}
+
+#resetFiltersButton, #advancedSearchButton {
+    margin-bottom: 10px;
 }
 
 #nameFilter {
@@ -119,14 +119,14 @@ li.active {
 }
 
 .tableWrapper {
-    height: 700px;
+    height: 70vh;
     overflow-y: auto;
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 dl {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0;
@@ -138,12 +138,7 @@ dl {
 }
 
 dd {
-    font-size: 1.2em;
-}
-
-.tableWrapper thead th {
-    position: sticky;
-    top: 0;
+    font-size: 1.1em;
 }
 
 dl:hover {
@@ -223,5 +218,125 @@ th {
 
 
 #addEmployeeButton, #addDepartmentButton, #addLocationButton {
-    margin: 80px;
+    margin: 5vh;
+}
+
+
+/* HEIGHT SCREEN ADJUSTMENTS*/
+
+@media only screen and (max-height: 1080px) {
+    .tableWrapper {
+        height: 65vh;
+    }
+}
+
+@media only screen and (max-height: 880px) {
+    .tableWrapper {
+        height: 60vh;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .tableWrapper {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-height: 580px) {
+    .tableWrapper {
+        height: 40vh;
+    }
+
+    .modalButton {
+        font-size: 1em;
+        line-height: 1em;
+    }
+    
+    .modal label {
+        font-weight: bold;
+        font-size: 0.9em;
+        margin-top: 0;
+    }
+    
+    .modal input, .modal select {
+        margin-bottom: 3px;
+    }
+    
+    .modal-footer {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .tableWrapper {
+        height: 30vh;
+    }
+}
+
+
+/* WIDTH SCREEN ADJUSTMENTS*/
+
+@media only screen and (max-width: 750px) {
+    dl {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    dd, dt {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    li {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #resetFiltersButton, #advancedSearchButton, #nameFilter { 
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+    dl {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    dd, dt {
+        font-size: 0.9em;
+    }
+
+    #employeesTable, #departmentsTable, #locationsTable {
+        width: 70%;
+    }
+
+    .tableWrapper {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 575px)  and (max-height: 760px) {
+
+    .tableWrapper {
+        height: 55vh;
+    }
+}
+
+@media only screen and (max-width: 575px)  and (max-height: 660px) {
+
+    .tableWrapper {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 575px)  and (max-height: 540px) {
+
+    .tableWrapper {
+        height: 40vh;
+    }
 }

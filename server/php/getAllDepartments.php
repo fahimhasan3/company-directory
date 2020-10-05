@@ -36,6 +36,9 @@
 		$query = $query . ' WHERE d.name like "%' . $nameFilter . '%"';
 	}
 
+	$query = $query .	" ORDER BY d.name";
+
+
 	$result = $conn->query($query);
 	
 	if (!$result) {
