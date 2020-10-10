@@ -109,20 +109,23 @@ function populateDepartmentsTable() {
       let location = allDepartments[index].location;
 
       $('#departmentsTable').append(`
-        <dl class="row" data-id=` + departmentId + ` onclick='openDepartmentModal();'>
+        <dl class="row col-xl-5 col-md-10" data-id=` + departmentId + ` onclick='openDepartmentModal();'>
           <div class='col-sm-10'>
               <div class='row'>
-                <dt class='col-sm-2'>Name</dt>
-                <dd class="col-sm-4">` + name + `</dd>
-                <dt class='col-sm-2'>Location</dt>
-                <dd class="col-sm-4">` + location + `</dd>
+                <div class='col-sm-6'>
+                  <dt class='col-sm-12'>Name</dt>
+                  <dd class="col-sm-12">` + name + `</dd>
+                </div>
+                <div class='col-sm-6'>
+                  <dt class='col-sm-12'>Location</dt>
+                  <dd class="col-sm-12">` + location + `</dd>
+                </div>
               </div>
            </div>
           <div class='col-sm-2'>
             <div class='row'>
               <br />
               <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteDepartment();' alt='delete icon' data-id=` + departmentId + ` class='deleteImageSmall' /></dd>
-              <br />
             </div>
           </div>
       `);
@@ -139,11 +142,11 @@ function populateLocationsTable() {
       let name = allLocations[index].name;
 
       $('#locationsTable').append(`
-        <dl class="row" data-id=` + locationId + ` onclick='openLocationModal();'>
+        <dl class="row col-md-10" data-id=` + locationId + ` onclick='openLocationModal();'>
           <div class='col-sm-10'>
               <div class='row'>
-                <dt class='col-sm-4'>Name</dt>
-                <dd class="col-sm-8">` + name + `</dd>
+                <dt class='col-sm-12'>Name</dt>
+                <dd class="col-sm-12">` + name + `</dd>
               </div>
            </div>
           <div class='col-sm-2'>
@@ -198,7 +201,7 @@ function showLocationTable() {
 
   $('h1').text('Locations');
 
-  $('#searchBarDiv').css('width', '66%');
+  $('#searchBarDiv').css('width', '56%');
 }
 
 function populateDepartments() {
@@ -270,6 +273,7 @@ function showPersonnelTable() {
 }
 
 function populateEmployeesTable() {
+  
   $("#employeesTable").empty();
 
   if (employeesData != null) {
@@ -285,28 +289,29 @@ function populateEmployeesTable() {
       
       
       $('#employeesTable').append(`
-        <dl class="row" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
+        <dl class="row col-xl-5 col-lg-10" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
           <div class='col-sm-10'>
               <div class='row'>
-                <dt class='col-sm-2'>Name</dt>
-                <dd class="col-sm-4">` + lastName + ` ` + firstName + `</dd>
-                <dt class='col-sm-2'>Phone Number</dt>
-                <dd class="col-sm-4">` + phoneNumber + `</dd>
-
-                <dt class='col-sm-2'>Job Title</dt>
-                <dd class="col-sm-4">` + jobTitle + `</dd>
-                <dt class='col-sm-2'>Email</dt>
-                <dd class="col-sm-4">` + email + `</dd>
-          
-
-                <dt class='col-sm-2'>Department</dt>
-                <dd class="col-sm-4">` + department + `</dd>
+                <div class='col-sm-6'>
+                  <dt class='col-sm-12'>Name</dt>
+                  <dd class="col-sm-12">` + lastName + ` ` + firstName + `</dd>
+                  <dt class='col-sm-12'>Job Title</dt>
+                  <dd class="col-sm-12">` + jobTitle + `</dd>
+                  <dt class='col-sm-12'>Department</dt>
+                  <dd class="col-sm-12">` + department + `</dd>
+                </div>
+                <div class='col-sm-6'>
+                  <dt class='col-sm-12'>Phone Number</dt>
+                  <dd class="col-sm-12">` + phoneNumber + `</dd>
+                  <dt class='col-sm-12'>Email</dt>
+                  <dd class="col-sm-12">` + email + `</dd>
+                </div>
               </div>
            </div>
           <div class='col-sm-2'>
             <div class='row'>
               <br />
-              <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteEmployee();' alt='delete icon' data-id=` + employeeId + ` class='deleteImage' /></dd>
+              <dd class="col-sm-12"><img src="images/delete.png" onclick='deleteEmployee();' alt='delete icon' data-id=` + employeeId + ` class='deleteImageSmall' /></dd>
               <br />
             </div>
           </div>

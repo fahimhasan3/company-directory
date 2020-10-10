@@ -75,8 +75,8 @@
 
     <section id='employeeSection'>
         <div id='employeesTableWrapper' class='tableWrapper shadow'>
-            <div id='employeesTable' >
-
+            <div id='employeesTable' class='row'>
+                
             </div>
         </div>
 
@@ -191,8 +191,8 @@
 
     <section id='departmentSection'>
         <div class='tableWrapper'>
-            <div id='departmentsTable'>
-                
+            <div id='departmentsTable' class='row'>
+
             </div>
         </div>
 
@@ -284,7 +284,7 @@
 
     <section id='locationSection'>
         <div class='tableWrapper'>
-            <div id='locationsTable'>
+            <div id='locationsTable' class='row'>
 
             </div>
         </div>
