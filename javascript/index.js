@@ -109,7 +109,7 @@ function populateDepartmentsTable() {
       let location = allDepartments[index].location;
 
       $('#departmentsTable').append(`
-        <dl class="row col-xl-5 col-md-10" data-id=` + departmentId + ` onclick='openDepartmentModal();'>
+        <dl class="row col-xl-5 col-md-10 shadow" data-id=` + departmentId + ` onclick='openDepartmentModal();'>
           <div class='col-sm-10'>
               <div class='row'>
                 <div class='col-sm-6'>
@@ -142,7 +142,7 @@ function populateLocationsTable() {
       let name = allLocations[index].name;
 
       $('#locationsTable').append(`
-        <dl class="row col-md-10" data-id=` + locationId + ` onclick='openLocationModal();'>
+        <dl class="row col-md-10 shadow" data-id=` + locationId + ` onclick='openLocationModal();'>
           <div class='col-sm-10'>
               <div class='row'>
                 <dt class='col-sm-12'>Name</dt>
@@ -289,7 +289,7 @@ function populateEmployeesTable() {
       
       
       $('#employeesTable').append(`
-        <dl class="row col-xl-5 col-lg-10" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
+        <dl class="row col-xl-5 col-lg-10 shadow" data-id=` + employeeId + ` onclick='openEmployeeModal();'>
           <div class='col-sm-10'>
               <div class='row'>
                 <div class='col-sm-6'>
