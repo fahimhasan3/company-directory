@@ -93,7 +93,7 @@ li.active {
 
 
 .deleteImageSmall {
-    height: 40px;
+    height: 30px;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -319,6 +319,10 @@ th {
 
     html {
         font-size: 0.8em;
+    }
+
+    .deleteImageSmall {
+        height: 25px;
     }
 }
 
