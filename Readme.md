@@ -7,6 +7,7 @@ A simple PHP and JavaScript project for managing company employees, locations, a
 ### 1. Database Setup
 - **Create a new database.**
 - **Import the SQL schema from:**
+server/sql/companydirectory.sql
 
 
 - **Update the database connection details in:**
