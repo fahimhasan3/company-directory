@@ -273,17 +273,18 @@ function showPersonnelTable() {
 }
 
 function populateEmployeesTable() {
+  console.log('populateEmployeesTable');
   
   $("#employeesTable").empty();
 
   if (employeesData != null) {
     for (index = 0; index < employeesData.length; index++) {
       let employeeId = employeesData[index].id;
-      let lastName = employeesData[index].lastName;
-      let firstName = employeesData[index].firstName;
-      let jobTitle = employeesData[index].jobTitle != null ? employeesData[index].jobTitle : "";
+      let lastName = employeesData[index].lastname;
+      let firstName = employeesData[index].firstname;
+      let jobTitle = employeesData[index].jobtitle != null ? employeesData[index].jobtitle : "";
       let email = employeesData[index].email != null ? employeesData[index].email : "";
-      let phoneNumber = employeesData[index].phoneNumber != null ? employeesData[index].phoneNumber : "";
+      let phoneNumber = employeesData[index].phonenumber != null ? employeesData[index].phonenumber : "";
       let department = employeesData[index].department;
 
       

@@ -12,6 +12,8 @@ INSERT INTO location (id, name) VALUES
     (4, 'Munich'),
     (5, 'Rome');
 
+SELECT setval(pg_get_serial_sequence('location', 'id'), 6, false);
+
 -- Create the department table
 CREATE TABLE IF NOT EXISTS department (
     id SERIAL PRIMARY KEY,
@@ -33,6 +35,8 @@ INSERT INTO department (id, name, locationID) VALUES
 	(10, 'Engineering', 5),
 	(11, 'Accounting', 5),
 	(12, 'Business Development', 3);
+
+SELECT setval(pg_get_serial_sequence('department', 'id'), 13, false);
 
 -- Create the personnel table
 CREATE TABLE IF NOT EXISTS personnel (
@@ -147,3 +151,5 @@ INSERT INTO personnel (id, firstName, lastName, jobTitle, email, departmentID) V
 	(98, 'Cherye', 'de Cullip', '', 'cdecullip2p@loc.gov', 10),
 	(99, 'Sinclare', 'Deverall', '', 'sdeverall2q@ow.ly', 6),
 	(100, 'Shae', 'Johncey', '', 'sjohncey2r@bluehost.com', 10);
+
+SELECT setval(pg_get_serial_sequence('personnel', 'id'), 101, false);

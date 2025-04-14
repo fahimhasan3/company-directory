@@ -6,5 +6,6 @@
 	$cd_user = "root";
 	$cd_password = "";
 	$cd_dbname = "companydirectory";
+    $connection_mode = 'mysql';
 
 ?>

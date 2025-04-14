@@ -40,6 +40,7 @@ INSERT INTO `department` (`id`, `name`, `locationID`) VALUES
 	(11, 'Accounting', 5),
 	(12, 'Business Development', 3);
 /*!40000 ALTER TABLE `department` ENABLE KEYS */;
+ALTER TABLE department AUTO_INCREMENT = 13;
 
 -- Dumping structure for table companydirectory.location
 CREATE TABLE IF NOT EXISTS `location` (
@@ -57,6 +58,7 @@ INSERT INTO `location` (`id`, `name`) VALUES
 	(4, 'Munich'),
 	(5, 'Rome');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
+ALTER TABLE location AUTO_INCREMENT = 6;
 
 -- Dumping structure for table companydirectory.personnel
 CREATE TABLE `personnel` (
@@ -175,6 +177,7 @@ INSERT INTO `personnel` (`id`, `firstName`, `lastName`, `jobTitle`, `email`, `de
 	(99, 'Sinclare', 'Deverall', '', 'sdeverall2q@ow.ly', 6),
 	(100, 'Shae', 'Johncey', '', 'sjohncey2r@bluehost.com', 10);
 /*!40000 ALTER TABLE `personnel` ENABLE KEYS */;
+ALTER TABLE personnel AUTO_INCREMENT = 101;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
