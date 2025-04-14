@@ -7,7 +7,7 @@
 
 	$executionStartTime = microtime(true);
 
-	include("config.php");
+	include(__DIR__ . "/config.php");
 	include("DatabaseConnection.php");
 
 	header('Content-Type: application/json; charset=UTF-8');
