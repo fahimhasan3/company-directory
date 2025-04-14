@@ -1,11 +1,9 @@
 <?php
-
-	$cd_host = "127.0.0.1";
-	$cd_port = 3306;
-	$cd_socket = "";
-	$cd_user = "root";
-	$cd_password = "";
-	$cd_dbname = "companydirectory";
-    $connection_mode = 'mysql';
-
+    $db_host = "127.0.0.1";
+    $db_port = 3306;
+    $db_socket = "";
+    $db_user = "root";
+    $db_password = "";
+    $db_name = "companydirectory";
+    $db_connection_mode = 'mysql';
 ?>
